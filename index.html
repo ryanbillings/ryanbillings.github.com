@@ -1,1 +1,72 @@
-"Hi Kara" 
+
+<html>
+
+<head>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+
+<script type="text/javascript"> 
+$(document).ready(function(){
+	$("#leftbox").hide();
+	$("#rightbox").hide();
+	$("#welcome").hide();
+      $("button").click(function(){
+			$("#expand").animate({height:300},"slow");
+			$("#expand").animate({width:$("body").width()*.5},"slow",function(){
+				$("#welcome").fadeIn("slow",function(){
+				$("#leftbox").animate({width:$("body").width()*.5},"slow",function(){
+				$("#rightbox").fadeIn();});
+				});
+			});
+        });
+});
+</script> 
+
+<style type = "text/css">
+body {
+  font: 14px Arial;
+  }
+  
+#container {
+  text-align: center;
+  }
+#expand {
+    background: #98bf21;
+    height: 100px;
+    width: 100px;
+	text-align: center;
+	margin: 0 auto;
+}
+
+#leftbox {
+  float: left;
+  height: 300px;
+  background: #99FFCC
+  }
+  
+#rightbox {
+  float: left;
+  height: 300px;
+  width: 180px;
+  background: red;
+  }
+
+#welcome {
+  margin-top: 50px;
+  vertica-align: center;
+  }
+</style>
+</head>
+
+<body>
+  <div id = "container">
+	<button>Click Me!</button>
+	<br /><br />
+	<div id = "leftbox">Please feel free to look around</div>
+	<div id = "expand"><span id = "welcome">Welcome to my site!</span></div>
+	
+  </div>
+</body>
+
+</html>
+
+
