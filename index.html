@@ -1,69 +1,90 @@
 <html>
-
 <head>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
-
-<script type="text/javascript"> 
-$(document).ready(function(){
-	$("#leftbox").hide();
-	$("#rightbox").hide();
-	$("#welcome").hide();
-      $("button").click(function(){
-			$("#expand").animate({height:300},"slow");
-			$("#expand").animate({width:$("body").width()*.5},"slow",function(){
-				$("#welcome").fadeIn("slow",function(){
-				$("#leftbox").animate({width:$("body").width()*.5},"slow",function(){
-				$("#rightbox").fadeIn();});
-				});
-			});
-        });
-});
-</script> 
-
-<style type = "text/css">
-body {
-  font: 14px Arial;
-  }
-  
-#container {
-  text-align: center;
-  }
-#expand {
-    background: #98bf21;
-    height: 100px;
-    width: 100px;
-	text-align: center;
-	margin: 0 auto;
-}
-
-#leftbox {
-  float: left;
-  height: 300px;
-  background: #99FFCC
-  }
-  
-#rightbox {
-  float: left;
-  height: 300px;
-  width: 180px;
-  background: red;
-  }
-
-#welcome {
-  margin-top: 50px;
-  vertica-align: center;
-  }
-</style>
+    <link rel="stylesheet" href="css/stylesheet.css" type="text/css" />
+    <!-- Required script -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="script/javascript.js"></script>
 </head>
-
 <body>
-  <div id = "container">
-	<button>Click Me!</button>
-	<br /><br />
-	<div id = "leftbox">Please feel free to look around</div>
-	<div id = "expand"><span id = "welcome">Welcome to my site!</span></div>
-	
-  </div>
+  <div id="container">
+    <h1><a href="#" class='headingLink'>RYAN BILLINGS</a></h1>
+    <div id="topbar">
+        <ul id = "categories">
+            <li class = "categoryLinks">
+                <div class = 'categoryText' id = 'home'>
+                    HOME
+                </div>
+                <div class = 'categoryDescription'>
+                    Welcome to my site. I hope you enjoy looking around.
+                </div>
+            </li>
+            <li class = "categoryLinks">
+                <div class = 'categoryText' id = 'about'>
+                    ABOUT
+                </div>
+                <div class = 'categoryDescription'>
+                    Aside from work and academics, my hobbies include music, sailing and sports.
+                </div>
+            </li>
+            <li class = "categoryLinks">
+                <div class = 'categoryText' id = 'work'>
+                    WORK
+                </div>
+                <div class = 'categoryDescription'>
+                    Over the past three summers I have worked at technology companies.
+                </div>
+            </li>
+            <li class = "categoryLinks">
+                <div class = 'categoryText' id = 'academic'>
+                    ACADEMIC
+                </div>
+                <div class = 'categoryDescription'>
+                   I am a senior at Carnegie Mellon completing a BS in Information Systems with a minor in Computer Science.
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div id="middleSpace">
+    &nbsp;
+    </div>
+    <div id="slider">
+        <div id="selected">
+            <div id="sliderBox">
+                    <img class = 'sliderImg' src = "img/Homepage1.jpg" />
+                    <img class = 'sliderImg' src = "img/Homepage2.jpg" />
+                    <img class = 'sliderImg' src = "img/Homepage3.png" />
+            </div>
+        </div>
+        <div class = "sliderBar" id = "barLeft">
+            <span class = 'sliderArrow' id = 'slideLeft'><img src = "images/ArrowLeft.png" /></span>
+        </div>
+        <div class = "sliderBar" id = "barRight">
+            <span class = 'sliderArrow' id = 'slideRight'><img src = "images/ArrowRight.png" /></span>
+            <div class = "homepageDescription" id = "desc1" style = "display:none;">
+                Welcome to my site!<br /><br />
+                My name is Ryan Billings and I am a senior studying Information Systems and Computer Science at Carnegie Mellon University.<br /><br />
+                Throughout my years in school, I have developed a passion for creating Software Applications, whether they are client-based or web-based.<br /><br />
+                I am also interested in the business processes that are involved in creating complex software systems.<br /><br />
+                <div class = 'closeButton'>&gt; Close</div>
+            </div>
+            <div class = "homepageDescription" id = "desc2" style = "display:none;">
+                At the beginning of Fall 2012, I built a game called 'Penguin' for a course at CMU.<br /><br />
+                The purpose of this game was to learn javascript and HTML5 Canvas in a short time (we had 4 days).<br /><br />
+                Additionally, we had to draw all images from scratch using Canvas functions!<br /><br />
+                I worked with Arjuna Hayes and Karl Hellstern to make this puzzle-based game.<br /><br />
+                <div class = 'closeButton'>&gt; Close</div><br /><br />
+                <a href="game/index.html" class="demo">Demo</a>
+            </div>
+            <div class = "homepageDescription" id = "desc3" style = "display:none;">
+                During the Spring of 2012, I worked with a team of IS juniors to create an application called CMU Connect<br /><br />
+                The objective for this application was to provide a video-chat platform for the CMU Community.<br /><br />
+                Our project was entered into the campus-wide 'Meeting of the Minds' competition, and won two awards.<br /><br />
+                <div class = 'closeButton'>&gt; Close</div><br /><br />
+                <a href="http://strong-journey-4339.herokuapp.com" class="demo">Demo</a>
+            </div>
+        </div>
+    </div>
+  </div><!-- End container -->
 </body>
 
 </html>
