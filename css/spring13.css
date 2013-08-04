@@ -1,0 +1,162 @@
+/* Eric Meyer's Reset CSS v2.0 - http://cssreset.com */
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{border:0;font-size:100%;font:inherit;vertical-align:baseline;margin:0;padding:0}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:none}table{border-collapse:collapse;border-spacing:0}
+
+body{
+    text-align: center;
+    background: #f2f9fe; /* Old browsers */
+    background: -moz-radial-gradient(center, ellipse cover, #f2f9fe 0%, #d6f0fd 100%); /* FF3.6+ */
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#f2f9fe), color-stop(100%,#d6f0fd)); /* Chrome,Safari4+ */
+    background: -webkit-radial-gradient(center, ellipse cover, #f2f9fe 0%,#d6f0fd 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-radial-gradient(center, ellipse cover, #f2f9fe 0%,#d6f0fd 100%); /* Opera 12+ */
+    background: -ms-radial-gradient(center, ellipse cover, #f2f9fe 0%,#d6f0fd 100%); /* IE10+ */
+    background: radial-gradient(ellipse at center, #f2f9fe 0%,#d6f0fd 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f9fe', endColorstr='#d6f0fd',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    font-family: 'Amatic SC', cursive;
+}
+
+#container{
+    width: 800px;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+#homeLink{
+    color: #161616;
+    text-decoration: none;
+}
+
+#slideContainer{
+    left: 0px;
+    width: 4000px;
+    height: 620px;
+    position: relative;
+}
+
+#selectedSlide{
+    margin: 0 auto;
+    position: fixed;
+    top: 0px;
+    height: 620px;
+    width: 800px;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.slide{
+    width: 800px;
+    float: left;
+    height: 620px;
+}
+
+.header{
+    margin-top: 20px;
+    font-size: 56px;
+    font-weight: bold;
+    color: #161616;
+}
+
+#subheader{
+    font-size: 30px;
+}
+
+#myCanvas{
+    width: 400px;
+    height: 400px;
+    border: 2.5px solid #444444;
+}
+
+#hint{
+    margin-top: 30px;
+    font-size: 16px;
+    vertical-align: bottom;
+    text-align: left;
+    margin-left: 200px;
+}
+
+#youWin{
+    margin-top: 30px;
+    height: 370px;
+    display: none;
+    text-align: center;
+    font-size: 40px;
+}
+
+#arrowDesc{
+    margin-top: 25px;
+}
+
+#arrowFooter{
+    margin-top: -20px;
+    font-size: 20px;
+    height: 50px;
+}
+
+#arrowFooter img{
+    padding: 5px;
+    height: 30px;
+    width: 30px;
+}
+
+.slideContent{
+    padding-left: 60px;
+    padding-right: 60px;
+    margin-top: 40px;
+    font-size: 22px;
+    text-align: left;
+    font-family: 'Roboto Condensed', sans-serif;
+    line-height: 1.1em;
+    word-spacing: 1.5px;
+    letter-spacing: 1.5px;
+}
+
+.winPic{
+    margin-top: 150px;
+}
+
+#win{
+    font-size: 56px;
+    font-weight: bold;
+    margin-top: 50px;
+}
+
+a,a:hover,a:active,a:visited{
+    color: #6CBC51;
+    text-decoration: none;
+}
+
+.aboutPic{
+    padding: 30px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.aboutPic img{
+    height: 300px;
+    width: 500px;
+}
+
+.aboutPic div{
+    text-align: center;
+    font-size: 12px;
+}
+
+#wasd {
+    margin-top: -280px;
+    margin-left: 305px;
+    position: absolute;
+    display: none;
+}
+
+#wasd img{
+    height: 70px;
+    width: 70px;
+    opacity:0.85;
+    filter:alpha(opacity=85); /* For IE8 and earlier */
+}
+
+#contact{
+    float: right;
+    top: 10px;
+    right: 10px;
+    position: fixed;
+}
