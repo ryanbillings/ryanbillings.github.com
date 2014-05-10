@@ -22,15 +22,19 @@ $(document).ready(function(){
     var pRow, pCol;
     var mazeListener;
     
+    var touchX, touchY = 0;
+    
     // Sets for Maze
     var grid;
     var cardinalGrid;
     
     // Canvas
     var canvas = document.getElementById("myCanvas");
-    //canvas.setAttribute('tabindex', '0');
     canvas.focus();
     var ctx = canvas.getContext("2d");
+    
+    // Accelerometer
+    var accelerometer;
     
     function Vertex(row,col){
         this.row = row;
@@ -53,6 +57,24 @@ $(document).ready(function(){
         slideShowListener();
     }
     
+    function tiltGameListener(){
+        var lastAccel = accelerometer.getLast();
+
+        if(lastAccel.x < -4 && lastAccel.z > 4){
+            moveRight();
+            checkWin();
+        }else if(lastAccel.x > 4 && lastAccel.z > 4){
+            moveLeft();
+            checkWin();
+        }else if(lastAccel.y < -5 && parseInt(lastAccel.x) == 0){
+            moveDown();
+            checkWin();
+        }else if(lastAccel.y > -2 && parseInt(lastAccel.x) == 0){
+            moveUp();
+            checkWin();
+        }
+    }
+    
     /** 
      * SLIDE SHOW
     **/
@@ -65,6 +87,31 @@ $(document).ready(function(){
             else if(key == keyCodes.RIGHT){
                 moveSlide(false);
             }
+        });
+        
+        // Swipe Events
+        $(document).on('touchstart',function(event){
+            var e = event.originalEvent;
+            touchX = e.changedTouches[0].pageX;
+            touchY = e.changedTouches[0].pageY;
+            e.preventDefault();
+        });
+        $(document).on('touchmove', function(event){
+            event.originalEvent.preventDefault();
+        });
+        $(document).on('touchend',function(event){
+            var e = event.originalEvent;
+            var xDelta = 0;
+            var yDelta = 0;
+            var distX = touchX - e.changedTouches[0].pageX;
+            var distY = touchY - e.changedTouches[0].pageY;
+            if(distX > 0 && Math.abs(distY) < 120){
+                moveSlide(false);
+            }
+            else if(distX < 0 && Math.abs(distY) < 120){
+                moveSlide(true);
+            }
+            e.preventDefault();
         });
     }
     
@@ -220,36 +267,30 @@ $(document).ready(function(){
     }
     
     function drawRightEdge(row,col){
-        //if(col < numCells-1 && grid[row][col+1] == true){
-            ctx.strokeStyle = "black";
-            ctx.beginPath();
-            ctx.moveTo((col+1)*cellSize,row*cellSize);
-            ctx.lineTo((col+1)*cellSize,(row+1)*cellSize);
-            ctx.stroke();
-            ctx.closePath();
-        //}
+        ctx.strokeStyle = "black";
+        ctx.beginPath();
+        ctx.moveTo((col+1)*cellSize,row*cellSize);
+        ctx.lineTo((col+1)*cellSize,(row+1)*cellSize);
+        ctx.stroke();
+        ctx.closePath();
     }
     
     function drawBottomEdge(row,col){
-        //if(row > 0 && grid[row+1][col] == true){
-            ctx.strokeStyle = "black";
-            ctx.beginPath();
-            ctx.moveTo(col*cellSize,(row+1)*cellSize);
-            ctx.lineTo((col+1)*cellSize,(row+1)*cellSize);
-            ctx.stroke();
-            ctx.closePath();
-        //}
+        ctx.strokeStyle = "black";
+        ctx.beginPath();
+        ctx.moveTo(col*cellSize,(row+1)*cellSize);
+        ctx.lineTo((col+1)*cellSize,(row+1)*cellSize);
+        ctx.stroke();
+        ctx.closePath();
     }
     
     function drawTopEdge(row,col){
-        //if(row < numCells-1 && grid[row-1][col] == true){
-            ctx.strokeStyle = "black";
-            ctx.beginPath();
-            ctx.moveTo(col*cellSize,row*cellSize);
-            ctx.lineTo((col+1)*cellSize,row*cellSize);
-            ctx.stroke();
-            ctx.closePath();
-        //}
+        ctx.strokeStyle = "black";
+        ctx.beginPath();
+        ctx.moveTo(col*cellSize,row*cellSize);
+        ctx.lineTo((col+1)*cellSize,row*cellSize);
+        ctx.stroke();
+        ctx.closePath();
     }
     
     function hasVertex(row,col,vertexSet){
@@ -332,9 +373,18 @@ $(document).ready(function(){
                 checkWin();
             }
         });
+        // Get accelerometer set up
+        accelerometer = new Accelerometer();
+        accelerometer.startListening();
+        
+        if(window.util.isIOS() || window.util.isAndroid()){
+            drawFn = setInterval(function(){
+                tiltGameListener();
+            },500);
+        }
+        
         drawPlayer();
         drawGoal();
-        //mazeHoverListener();
     }
     
    

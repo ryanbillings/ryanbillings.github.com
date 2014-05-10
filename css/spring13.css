@@ -73,6 +73,10 @@ body{
     margin-left: 200px;
 }
 
+#tiltMsg{
+    visibility: hidden;
+}
+
 #youWin{
     margin-top: 30px;
     height: 370px;
@@ -83,6 +87,11 @@ body{
 
 #arrowDesc{
     margin-top: 25px;
+}
+
+#swipeDesc{
+    margin-top: 25px;
+    display: none;
 }
 
 #arrowFooter{
