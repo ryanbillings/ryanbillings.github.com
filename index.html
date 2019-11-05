@@ -3,20 +3,12 @@
     <title>
         Ryan Billings
     </title>
-    <meta name="description" content="Ryan Billings, Software Developer">
+    <meta name="description" content="Ryan Billings, Software Engineer, Tech Lead, and Manager">
     <meta http-equiv="content-type" content="text/html;charset=UTF-8">
-    <link rel="stylesheet" href="css/spring13.css" type="text/css" />
-    <link rel="stylesheet" href="css/mobile.css" type="text/css" />
-    <meta name="viewport" content="width=device-width, initial-scale=.45">
-    <link href='http://fonts.googleapis.com/css?family=Amatic+SC' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300' rel='stylesheet' type='text/css'>
-    <!-- Required script -->
-    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-    <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-    <script type="text/javascript" src="script/spring13.js"></script>
-    <script type="text/javascript" src="script/Util.js"></script>
-    <script type = "text/javascript" src = "script/Accelerometer.js"></script>
-    <script type="text/javascript">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/style.css" type="text/css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&display=swap" rel="stylesheet">
+    <script>
           var _gaq = _gaq || [];
           _gaq.push(['_setAccount', 'UA-34721257-1']);
           _gaq.push(['_trackPageview']);
@@ -29,99 +21,36 @@
     </script>
 </head>
 <body>
-    <div id = "contact">
-        <a href = "mailto:ryj.billings@gmail.com"><img src = "images/email_light.png" /></a>
-        <a href = "http://www.linkedin.com/pub/ryan-billings/2b/4a6/224"><img src = "images/linkedin_light.png" /></a>
-    </div>
-    <div id="container">
-        <div id = "slideContainer">
-            <div class = "slide" id = "slide1">
-                <div class = "header">
-                    <a href = "http://rbillings.com" id = "homeLink">RYAN BILLINGS</a>
-                </div>
-                <div id = "subheader">
-                    Software Developer
-                </div>
-                <div id = "canvasContainer">
-                    <div id = "hint">
-                        <span id='wasdMsg'>use w-a-s-d to move the ball</span>
-                        <span id='tiltMsg'>tilt your device to move the ball</span>
-                    </div>
-                    <canvas id = "myCanvas" width = "400px" height = "400px">Browser is not Supported.</canvas>
-                    <div id = "wasd">
-                        <img src = "images/w.png"/><br />
-                        <img src = "images/a.png"/>
-                        <img src = "images/s.png"/>
-                        <img src = "images/d.png"/>
-                    </div>
-                </div>
-                <div id = "youWin">
-                    <br /><br />
-                    <img src = "images/smiley.png"/>
-                    <div id = "win">You Win!</div>
-                </div>
-                <div id = "arrowFooter">
-                    <div id = "arrowDesc">Use the Arrow Keys to view my site</div>
-                    <div id = "swipeDesc">Swipe the screen to view my site</div>
-                    <span class = "arrow leftArrow"><img src = "images/leftArrow.png"/></span><span class = "arrow rightArrow"><img src = "images/rightArrow.png"/></span>
-                </div>
+    <div class="splash"></div>
+    <div class="contact">
+        <div class="contact-Container">
+            <h1 class="contact-Name">Ryan Billings</h1>
+            <div class="contact-Title">
+                <span class="contact-Title-name">Software Engineering Manager</span>
+                <span class="contact-Title-location">Washington DC Metro Area</span>
             </div>
-            <div class = "slide" id = "slide2">
-                <div class = "header">
-                    About Me
-                </div>
-                <div class = "slideContent">
-                    <p>
-                    Hi! I am a full-stack engineer that enjoys learning the latest and greatest web technologies.
-                    From NodeJS to Ruby on Rails, I love creating dynamic software applications.     
-                    </p><br />
-                    <p>
-                    I am currently an Application Developer for <a href = "http://customink.com"/>CustomInk</a> in McLean, VA.
-                    </p>
-                    <div id = "office" class = "aboutPic">
-                        <img src = "images/office.jpg"/>
-                        <div>
-                            CustomInk's new office in the Mosaic District, Fairfax VA
-                        </div>
-                    </div>
-                </div>
+            <p class="contact-Description">
+                Hello! I am a technology professional with 7+ years of experience as a Software Engineer, Technical Team Lead, and Engineering Manager. I'm currently pursuing an MS in Information Systems at George Mason University as a full-time student, and will be graduating in December of 2019. I am results-focused contributor with a technical curiosity.
+                <br /><br />
+                In my free time, I enjoy playing the piano, running, listening to jazz, and seeking out spicy food.
+            </p>
+            <div class="contact-Links">
+                <a href="https://github.com/ryanbillings" target="_blank" class="contact-Link">
+                    <img class="contact-Link-image" src="images/github_light.png" />
+                    github.com/ryanbillings
+                </li>
+                <a href="mailto:ryj.billings@gmail.com" class="contact-Link">
+                    <img class="contact-Link-image" src="images/email.png" />ryj.billings@gmail.com
+                </a>
+                <a class="contact-Link" target="_blank" href="http://www.linkedin.com/pub/ryan-billings/2b/4a6/224">
+                    <img class="contact-Link-image" src="images/linkedin.png" />
+                    LinkedIn
+                </a>
+                <a class="contact-Link" target="_blank" href="files/RyanBillingsResume.pdf">
+                    <img class="contact-Link-image" src="images/resume.png" />
+                    View Resume
+                </a>
             </div>
-            <div class = "slide" id = "slide3">
-                <div class = "header">
-                    Background
-                </div>
-                <div class = "slideContent">
-                    <p>
-                    I am an alumni from Carnegie Mellon University, where I studied Information Systems and Computer Science.          
-                    <br /><br />
-                    If you are interested, you can try out a <a href = "game/index.html">game that I
-                    created in pure Javascript</a> for one of my classes.
-                    </p>
-                    <div id = "campus" class = "aboutPic">
-                        <img src = "images/campus.jpg"/>
-                        <div>
-                            Carnegie Mellon's Pittsburgh Campus
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class = "slide" id = "slide4">
-                <div class = "header">
-                    Hobbies
-                </div>
-                <div class = "slideContent">
-                    <p>When I'm not coding, I enjoy listening to and playing jazz. I also love video games, cooking, and Boston sports!</p>
-                    <br />
-                    <p>During the summer, I often go sailing with my family in New England.</p>  
-                    <div class = "aboutPic">
-                        <img src = "images/newport.jpg"/>
-                        <div>
-                            Sailing off of Newport, RI
-                        </div>
-                    </div>                    
-                </div>
-            </div>
-            <div id = "selectedSlide"></div>
         </div>
     </div>
 </body>

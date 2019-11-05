@@ -1,0 +1,99 @@
+body {
+  display: flex;
+  flex-direction: row wrap;
+  width: 100%;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  margin: 0;
+}
+
+.contact, .splash {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  flex: 1;
+}
+
+.splash {
+  background-image: url('../images/iceland.jpg');
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.contact {
+  color: rgba(112, 112, 112, 1);
+  padding-left: 2rem;
+  font-size: 0.9rem;
+  padding-bottom: 1rem;
+}
+
+.contact-Container {
+  margin-top: 1rem;
+  padding-left: 1rem;
+  border-left: 3px solid rgba(130, 210, 250, 1);
+}
+
+.contact-Name {
+  margin-top: 0;
+  font-weight: 500;
+  font-size: 2.5rem;
+  line-height: 1;
+}
+
+.contact-Title-name {
+  font-weight: 700;
+}
+
+.contact-Description {
+  width: 80%;
+  margin-top: 1.5rem;
+}
+
+.contact-Links {
+  padding: 0;
+  margin-top: 1.5rem;
+}
+
+.contact-Link {
+  list-style-type: none;
+  border: 1px solid rgba(226, 226, 226, 1);
+  box-shadow: 1px 2px 2px rgba(226, 226, 226, 1),
+              inset 1px 0px 1px rgba(226, 226, 226, 1);
+  margin-bottom: 1rem;
+  width: 15rem;
+  display: flex;
+  align-items: center;
+  padding: 0.5rem;
+  text-decoration: none;
+  color: rgba(112, 112, 112, 1);
+}
+
+.contact-Link:last-child {
+  margin-bottom: 0;
+}
+
+.contact-Link-image {
+  border-radius: 5px;
+  margin-right: 0.5rem;
+  padding: 0.25rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: rgba(29, 170, 252, 1);
+}
+
+@media only screen and (max-width: 700px) {
+  .splash {
+    display: none;
+  }
+
+  .contact-Title-location {
+    display: block;
+  }
+
+  .contact-Link {
+    width: 80%;
+  }
+}
+
+
+
